@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="/static/assets/images/favicon.png">
+    <title>Products Catalog</title>
+    <style>
+        :root {
+            --bg: #0b0f14;
+            --panel: #111827;
+            --muted: #94a3b8;
+            --text: #e5e7eb;
+            --brand: #38bdf8;
+            --brand-2: #008000;
+            --accent: #a78bfa;
+            --card: #0f172a;
+            --ring: rgba(56, 189, 248, .35);
+            --good: #34d399;
+            --warn: #f59e0b;
+            --danger: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            font: 15px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+            color: var(--text);
+            background: url("/static/assets/images/pigments.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        body.light {
+            background: #f8f9fa;
+            color: #212529;
+        }
+
+        body.dark {
+            background: #121212;
+            color: #e9ecef;
+        }
+
+        .card {
+            border-radius: 8px;
+            padding: 10px;
+            margin: 8px 0;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        body.light .card {
+            background: #fff;
+            color: #212529;
+        }
+
+        body.dark .card {
+            background: #1e1e1e;
+            color: #e9ecef;
+        }
+
+        .darkmode-toggle {
+            cursor: pointer;
+            padding: 8px 14px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: var(--brand);
+            text-decoration: none
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        header.hero {
+            position: relative;
+            padding: 56px 28px 28px 28px;
+            border-bottom: 1px solid rgba(148, 163, 184, .15);
+            overflow: hidden;
+        }
+
+        header.hero .title {
+            display: grid;
+            gap: 10px;
+            max-width: 1200px;
+            margin: 0 auto;
+            grid-template-columns: 1fr;
+        }
+
+        .eyebrow {
+            color: var(--brand-2);
+            letter-spacing: .12em;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 12px
+        }
+
+        .h1 {
+            font-size: clamp(14px, 2vw, 22px);
+            font-weight: 600;
+            letter-spacing: -.02em
+        }
+
+        .lead {
+            color: var(--muted);
+            max-width: 70ch
+        }
+
+        .shell {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 24px;
+            padding: 24px;
+            max-width: 1400px;
+            margin: 0 auto
+        }
+
+        @media (max-width: 980px) {
+            .shell {
+                grid-template-columns: 1fr
+            }
+        }
+
+        aside.sidebar {
+            position: sticky;
+            top: 0;
+            align-self: start;
+            height: max(calc(100dvh - 48px), 340px);
+            background: linear-gradient(180deg, rgba(15, 23, 42, .7), rgba(17, 24, 39, .7));
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(148, 163, 184, .18);
+            border-radius: 5px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .sidebar .search {
+            display: grid;
+            gap: 8px
+        }
+
+        .input,
+        select {
+
+            appearance: none;
+            background: var(--card);
+            border: 1px solid rgba(148, 163, 184, .22);
+            border-radius: 5px;
+            padding: 10px 12px;
+            color: var(--text);
+            outline: none;
+            max-width: 100%;
+            width: 100%;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        select option {
+            white-space: normal;
+            /* allow wrapping inside dropdown */
+        }
+
+
+        .input:focus,
+        select:focus {
+            border-color: var(--brand);
+            box-shadow: 0 0 0 4px var(--ring)
+        }
+
+        .actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap
+        }
+
+        .btn {
+            cursor: pointer;
+            border: 1px solid rgba(148, 163, 184, .25);
+            background: #0b1220;
+            color: var(--text);
+            border-radius: 5px;
+            padding: 10px 12px;
+            font-weight: 600
+        }
+
+        .btn.brand {
+            border-color: transparent;
+            background: linear-gradient(90deg, var(--brand), var(--brand-2));
+            color: #00111a
+        }
+
+        .btn.ghost {
+            background: transparent
+        }
+
+        nav.toc {
+            overflow: auto;
+            padding-right: 6px
+        }
+
+        nav.toc a {
+            display: block;
+            padding: 8px 10px;
+            border-radius: 5px;
+            color: #d1d5db
+        }
+
+        nav.toc a:hover {
+            background: rgba(148, 163, 184, .1)
+        }
+
+        main.catalog {
+            display: grid;
+            gap: 22px
+        }
+
+        section.group {
+            background: linear-gradient(180deg, rgba(2, 6, 23, .6), rgba(2, 6, 23, .9));
+            border: 1px solid rgba(148, 163, 184, .18);
+            border-radius: 5px;
+            padding: 16px
+        }
+
+        .group h2 {
+            margin: 0 0 8px 0;
+            font-size: 22px
+        }
+
+        .group .meta {
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 12px
+        }
+
+        @media (max-width: 1200px) {
+            .grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr))
+            }
+        }
+
+        @media (max-width: 720px) {
+            .grid {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid rgba(148, 163, 184, .15);
+            border-radius: 5px;
+            padding: 14px;
+            display: grid;
+            gap: 8px
+        }
+
+        .card h3 {
+            margin: 0;
+            font-size: 16px
+        }
+
+        .card .desc {
+            color: var(--muted)
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            font-size: 11px;
+            min-width: 80px;
+            /* ensures consistent width */
+            height: 24px;
+            /* fixed height for symmetry */
+            line-height: 24px;
+            /* vertically center text */
+            border-radius: 5px;
+            /* pill shape */
+            background: rgba(56, 189, 248, 0.12);
+            color: var(--brand);
+            text-align: center;
+            /* center horizontally */
+            white-space: nowrap;
+            /* prevent multi-line */
+            display: inline-block;
+        }
+
+        .mfg {
+            font-size: 12px;
+            color: #cbd5e1
+        }
+
+        .toolbar {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 6px
+        }
+
+        .count {
+            font-size: 12px;
+            color: var(--muted)
+        }
+
+        footer.site {
+            padding: 40px 24px;
+            color: var(--muted);
+            display: grid;
+            place-items: center
+        }
+
+
+
+        /* Mobile filter panel: hidden by default, slide-in when .open */
+        .mobile-filter {
+            display: none;
+        }
+
+        /* shown on small screens via media query */
+        .close-filters {
+            display: none;
+        }
+
+        /* shown on small screens */
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .22s ease;
+            z-index: 1000;
+        }
+
+        .overlay.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        /* Mobile behaviour */
+        @media (max-width: 980px) {
+            .mobile-filter {
+                display: inline-block;
+            }
+
+            .close-filters {
+                display: block;
+                margin-left: auto;
+            }
+
+            /* Make sidebar a slide-in panel */
+            aside.sidebar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100dvh;
+                width: min(92vw, 320px);
+                transform: translateX(-120%);
+                transition: transform .28s ease;
+                z-index: 1100;
+                margin: 0;
+                border-radius: 0 0 0 8px;
+                padding: 18px;
+            }
+
+            aside.sidebar.open {
+                transform: translateX(0);
+            }
+
+            /* Ensure main content flows full width behind overlay */
+            .shell {
+                grid-template-columns: 1fr;
+                /* keep content single column */
+            }
+
+
+        }
+
+        @media (max-width: 980px) {
+            header.hero .title img {
+                max-width: 200px !important;
+                /* force override inline style */
+                margin-left: 0 !important;
+                /* optional, adjust if needed */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="hero">
+        <div class="title">
+            <img style="max-width: 360px; margin-left: -10px;" src="/static/assets/images/greenfalcon.png" alt></a>
+
+            <div class="h1">Product Catalog</div>
+
+
+            <div class="actions">
+                <a class="btn ghost" href="/">Home</a>
+                <button class="btn ghost" id="clearFilters">Clear Filters</button>
+                <button class="btn ghost" style="background-color: #006900;" id="exportPdf">Download PDF</button>
+
+            </div>
+        </div>
+    </header>
+
+    <div class="shell">
+        <button class="btn ghost mobile-filter" id="toggleFilters" aria-controls="toc" aria-expanded="false">
+            ☰ Filters
+        </button>
+        <aside class="sidebar">
+            <button class="btn ghost close-filters" id="closeFilters" aria-label="Close filters">✕</button>
+            <div class="search">
+                <label for="q">Search products</label>
+                <input id="q" class="input" placeholder="Search name, description, manufacturer…" />
+            </div>
+            <div class="search">
+                <label for="manufacturer">Manufacturer</label>
+                <select id="manufacturer">
+                    <option value="">All manufacturers</option>
+                </select>
+            </div>
+            <div class="search">
+                <label for="category">Category</label>
+                <select id="category">
+                    <option value="">All categories</option>
+                </select>
+            </div>
+            <nav class="toc" id="toc"></nav>
+        </aside>
+
+        <main class="catalog" id="catalog"></main>
+    </div>
+    <div id="overlay" class="overlay" aria-hidden="true"></div>
+
+    <footer class="site">Copyright © 2025 Green Falcon.</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        let catalog = [];
+
+        $.getJSON("/catalog.json", function (data) {
+            catalog = data;   // now it's a JS array
+            renderToc();
+            renderFilters();
+            renderCatalog();
+        });
+
+        const el = (sel) => document.querySelector(sel);
+        const toc = el('#toc');
+        const catalogEl = el('#catalog');
+        const q = el('#q');
+        const selManufacturer = el('#manufacturer');
+        const selCategory = el('#category');
+
+        function renderToc() {
+            toc.innerHTML = '';
+            catalog.forEach(group => {
+                const a = document.createElement('a');
+                a.href = `#${group.id}`;
+                a.textContent = group.title;
+                toc.appendChild(a);
+            });
+        }
+
+        function renderFilters() {
+            // Manufacturers
+            const manufacturers = new Set();
+            catalog.forEach(g => g.items.forEach(i => manufacturers.add(i.manufacturer)));
+            const sorted = Array.from(manufacturers).sort((a, b) => a.localeCompare(b));
+            sorted.forEach(m => {
+                const opt = document.createElement('option');
+                opt.value = m; opt.textContent = m; selManufacturer.appendChild(opt);
+            });
+            // Categories
+            catalog.forEach(g => {
+                const opt = document.createElement('option');
+                opt.value = g.id; opt.textContent = g.title; selCategory.appendChild(opt);
+            });
+        }
+
+        function match(item, term) {
+            if (!term) return true;
+            const t = term.toLowerCase();
+            return (item.name + " " + (item.description || '') + " " + (item.manufacturer || '') + " " + (item.tags || []).join(' ')).toLowerCase().includes(t);
+        }
+
+        function renderCatalog() {
+            const term = q.value.trim();
+            const mf = selManufacturer.value;
+            const cat = selCategory.value;
+            catalogEl.innerHTML = '';
+
+            const groups = catalog.filter(g => !cat || g.id === cat);
+            groups.forEach(group => {
+                const filtered = group.items.filter(i => match(i, term) && (!mf || i.manufacturer === mf));
+                if (filtered.length === 0) return; // ⬅️ skip empty sections
+
+                const section = document.createElement('section');
+                section.className = 'group'; section.id = group.id;
+                section.innerHTML = `
+    <div class="toolbar">
+      <div>
+        <h2>${group.title}</h2>
+        <div class="meta">${group.meta ?? ''}</div>
+      </div>
+      <div class="count">${filtered.length} item${filtered.length !== 1 ? 's' : ''}</div>
+    </div>
+    <div class="grid"></div>
+  `;
+                catalogEl.appendChild(section);
+
+                const grid = section.querySelector('.grid');
+                filtered.forEach(item => {
+                    const card = document.createElement('article');
+                    card.className = 'card';
+                    card.innerHTML = `
+      <h3>${item.name}</h3>
+      <div class="mfg">${item.manufacturer || ''}</div>
+      ${item.description ? `<div class="desc">${item.description}</div>` : ''}
+      ${item.tags?.length ? `<div class="tags">${item.tags.map(t => `<span class=tag>${t}</span>`).join('')}</div>` : ''}
+    `;
+                    grid.appendChild(card);
+                });
+            });
+
+        }
+
+        // events
+        q.addEventListener('input', renderCatalog);
+        selManufacturer.addEventListener('change', renderCatalog);
+        selCategory.addEventListener('change', renderCatalog);
+        document.getElementById('clearFilters').addEventListener('click', () => {
+            q.value = ''; selManufacturer.value = ''; selCategory.value = ''; renderCatalog();
+        });
+
+
+        document.getElementById('exportPdf').addEventListener('click', () => {
+            const a = document.createElement('a');
+            a.href = '../static/catalog_greenfalcon.pdf';  // path to your saved file
+            a.download = 'catalog_greenfalcon.pdf'; // optional rename
+            a.click();
+        });
+
+
+        $("#download-json").click(function () {
+            // Convert to JSON string
+            const jsonStr = JSON.stringify(catalog, null, 2);
+
+            // Create a Blob
+            const blob = new Blob([jsonStr], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+
+            // Create a temporary link
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "catalog.json"; // filename
+            a.click();
+
+            // Cleanup
+            URL.revokeObjectURL(url);
+        });
+
+        // init
+        renderToc();
+        renderFilters();
+        renderCatalog();
+    </script>
+    <script>
+        // Mobile sidebar toggle
+        const toggleBtn = el('#toggleFilters');
+        const closeBtn = el('#closeFilters');
+        const sidebar = el('aside.sidebar');
+        const overlay = el('#overlay');
+
+        function openSidebar() {
+            sidebar.classList.add('open');
+            overlay.classList.add('show');
+            document.body.classList.add('no-scroll');
+            if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'true');
+        }
+
+        function closeSidebar() {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('show');
+            document.body.classList.remove('no-scroll');
+            if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+        }
+
+        // attach handlers if elements exist
+        if (toggleBtn) toggleBtn.addEventListener('click', openSidebar);
+        if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+        if (overlay) overlay.addEventListener('click', closeSidebar);
+
+        // if viewport grows to desktop, ensure mobile panel is closed
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 980) {
+                closeSidebar();
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
