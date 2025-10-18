@@ -20,6 +20,10 @@ templates = Jinja2Templates(directory="app/templates")
 def home(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
 
+@app.get("/old")
+def home(request: Request):
+    return templates.TemplateResponse("homeold.html", {"request": request})
+
 # PDF content page
 @app.get("/catalog")
 def pdf_content(request: Request):

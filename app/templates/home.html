@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="irstheme">
+    <meta name="author" content="Blue Falcon">
 
-
-    <title> Green Falcon </title>
+    <title>Blue Falcon Transportation</title>
 
     <link rel="icon" type="image/png" href="/static/assets/images/favicon.png">
     <link href="/static/assets/css/themify-icons.css" rel="stylesheet">
@@ -25,158 +22,62 @@
     <link href="/static/assets/css/odometer-theme-default.css" rel="stylesheet">
     <link href="/static/assets/css/style.css" rel="stylesheet">
 
-
+    <style>
+        /* small tweaks specific to Blue Falcon page */
+        .hero .slide-title h2 { color: #0b3d91; } /* blue tone */
+        .service-grid .count { background: #0b3d91; color: #fff; }
+        .about-features h2 { color: #0b3d91; }
+        .theme-btn { background:#0b3d91; border-color:#0b3d91; color:#fff; }
+        footer .lower-footer { background:#0f2540; color:#fff; padding:20px 0; }
+    </style>
 </head>
-<style>
-    @media (max-width: 767px) {
-        .navbar-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-
-        .navbar-header .navbar-brand img {
-            max-width: 140px;
-
-            height: auto;
-        }
-
-        .navbar-header .open-btn {
-            margin-left: auto;
-
-        }
-    }
-</style>
-
 <body>
-
     <div class="page-wrapper">
 
+        <!-- Header / Navigation -->
         <header id="header" class="site-header header-style-1">
-
             <nav class="navigation navbar navbar-default">
                 <div class="container">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="/"><img src="/static/assets/images/greenfalcon.png" alt></a>
+                        <a class="navbar-brand" href="/"><img src="/static/assets/images/Blue falcon.png" alt="Blue Falcon" style="max-height:60px"></a>
                         <button type="button" class="open-btn" style="
-                        top: 20%;
+                            top: 20%;
                             background: transparent;
                             border: none;
                             outline: none;
-                            color: #22c55e;  /* green color */
-                            font-size: 28px;  /* size of the ☰ */
+                            color: #0B3D91;
+                            font-size: 28px;
                             padding: 8px;
                             cursor: pointer;
                         ">☰</button>
-
                     </div>
 
                     <div id="navbar" class="navbar-collapse collapse navbar-right navigation-holder">
                         <button class="close-navbar"><i class="ti-close"></i></button>
                         <ul class="nav navbar-nav">
-                            <li class="menu-item-has-children">
-                                <a href="#">Home</a>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="#products">Products</a>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="#energy">Energy</a>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="#plasticAndRubberAdditives">Plastic & Rubber</a>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="#waterTreatments">Water Treatments</a>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="/catalog">Catalog</a>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="#contact">Contact</a>
-                            </li>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#fleet">Fleet & Equipment</a></li>
+                            <li><a href="#oversized">Oversized Loads</a></li>
+                            <li><a href="#contact">Contact</a></li>
                         </ul>
                     </div>
-
                 </div>
             </nav>
         </header>
 
+        <!-- Hero -->
         <section id="home" class="hero hero-slider-wrapper hero-style-1">
             <div class="hero-slider">
                 <div class="slide">
-                    <img src="/static/assets/images/slider/slide-4.jpg" alt class="slider-bg">
+                    <img src="/static/assets/images/Slide 4.jpg" alt class="slider-bg">
                     <div class="container">
                         <div class="row">
-                            <div class="col col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 slide-caption">
-                                <div class="slide-subtitle">
-                                    <p>Welcome to Green Falcon</p>
-                                </div>
-                                <div class="slide-title">
-                                    <h2>Your Trusted Partner for Chemicals </h2>
-                                </div>
-                                <div class="btns">
-                                    <a href="#about" class="theme-btn">More About Us</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide">
-                    <img src="/static/assets/images/slider/slide-2.jpg" alt class="slider-bg">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 slide-caption">
-                                <div class="slide-subtitle">
-                                    <p>Welcome to Green Falcon</p>
-                                </div>
-                                <div class="slide-title">
-                                    <h2>Empowering manufacturers to achieve exceptional performance.</h2>
-                                </div>
-                                <div class="btns">
-                                    <a href="#about" class="theme-btn">More About Us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide">
-                    <img src="/static/assets/images/slider/slide-3.jpg" alt class="slider-bg">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 slide-caption">
-                                <div class="slide-subtitle">
-                                    <p>Welcome to Green Falcon</p>
-                                </div>
-                                <div class="slide-title">
-                                    <h2>Your Trusted Partner for Chemicals </h2>
-                                </div>
-                                <div class="btns">
-                                    <a href="#about" class="theme-btn">More About Us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide">
-                    <img src="/static/assets/images/slider/slide-1.jpg" alt class="slider-bg">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 slide-caption">
-                                <div class="slide-subtitle">
-                                    <p>Welcome to Green Falcon</p>
-                                </div>
-                                <div class="slide-title">
-                                    <h2>Empowering manufacturers to achieve exceptional performance.</h2>
-                                </div>
-                                <div class="btns">
-                                    <a href="#about" class="theme-btn">More About Us</a>
-                                </div>
+                            <div class="col col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 slide-caption text-center">
+                                <div class="slide-subtitle"><p>Welcome to Blue Falcon Transportation</p></div>
+                                <div class="slide-title"><h2>Dependable heavy transport & logistics for construction, oil & gas, and industry.</h2></div>
+                                <div class="btns"><a href="#about" class="theme-btn">More About Us</a></div>
                             </div>
                         </div>
                     </div>
@@ -184,419 +85,232 @@
             </div>
         </section>
 
+        <!-- About / Intro (from PDF) -->
         <section id="about" class="feature-projects section-padding">
             <div class="container">
                 <div class="row">
                     <div class="col col-lg-9">
                         <div class="section-title-s2">
-                            <span>Welcome to</span>
-                            <h2>green falcon</h2>
+                            <span>About</span>
+                            <h2>Blue Falcon Transportation Company</h2>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col col-lg-7 col-md-7">
+
                         <div class="about-features clearfix">
-                            <p style="text-align: justify;">Green Falcon is a leading distributor of chemicals and
-                                ingredients in the MENA region. Based in Saudi Arabia, the company specialized in
-                                managing complex supply chains for both chemical manufacturers and consumers,
-                                simplifying market access to thousands of products and services. Combining a global
-                                network with exceptional local execution, Green Falcon stands as on the industry's most
-                                effective and preferred chennels to the MENA market for partners. </p>
+                            <p style="text-align:justify;">
+                                Blue Falcon Transportation Company is a dynamic logistics and heavy transport services provider,
+                                committed to excellence in moving, hauling, and supporting the region's most critical infrastructure
+                                and industrial projects. With a modern fleet, skilled workforce, and a strong safety culture, we serve
+                                the construction, oil & gas, and industrial sectors with unwavering reliability. :contentReference[oaicite:2]{index=2}
+                            </p>
                         </div>
+
                         <div class="about-features clearfix">
-                            <h2>YOUR TRUSTED PARTNER FOR CHEMICALS</h2>
-                            <p style="text-align: justify;">At Green Falcon, we are committed to delivering innovative,
-                                high-quality solutions for the Chemicals industry sectors. With our global
-                                reach, local expertise, and extensive portfolio of specialty products, we empower
-                                manufacturers to achieve exceptional performance and tailored formulations.
-                                Our wide range of ever evolving comprehensive portfolio includes it all. From Binders to
-                                Additives. Our solutions are designed to meet the evolving demands of the industry,
-                                ensuring efficiency, sustainability, and cost-effectiveness.
+                            <h2>What we specialize in</h2>
+                            <p style="text-align:justify;">
+                                We specialize in flatbed logistics, dumper truck operations, heavy equipment rental, tanker transport,
+                                and tailored logistics solutions across Saudi Arabia and the GCC. Whether transporting oversized cargo,
+                                bulk materials, or supporting your site with specialized machinery, Blue Falcon stands as your dependable
+                                logistics partner. :contentReference[oaicite:3]{index=3}
                             </p>
                         </div>
                     </div>
-                    <div class="col col-lg-4 col-lg-offset-1 col-md-5">
-                        <div class="video-holder">
-                            <div class="img-holder">
-                                <img src="/static/assets/images/coating.png" alt>
-                            </div>
+
+                    <div class="col col-lg-3">
+                        <div class="img-holder">
+                            <img src="/static/assets/images/Fleet.jpg" alt="Fleet">
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <section id="products" class="feature-projects section-padding">
+        <!-- Services / Highlights -->
+        <section id="services" class="feature-projects section-padding">
             <div class="container">
                 <div class="row">
                     <div class="col col-lg-9">
                         <div class="section-title-s2">
-                            <span>Our</span>
-                            <h2>Products</h2>
+                            <span>Services</span>
+                            <h2>Precision Hauling & Specialized Transport</h2>
                         </div>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col col-xs-12">
+                <div class="row service-grid">
+                    <!-- 01 -->
+                    <div class="col col-md-6">
                         <div class="projects-grids clearfix">
                             <div class="grid">
-                                <div class="project-pic">
-                                    <img src="/static/assets/images/epoxy-resin.jpeg" alt>
-                                </div>
+                                <div class="project-pic"><img src="/static/assets/images/Chemicals.jpg" alt="Precision Hauling"></div>
                                 <div class="details">
                                     <div class="inner">
                                         <div class="count">01</div>
-                                        <h4>EPOXY RESINS</h4>
-
-                                        <p>Bisphenol-A Epoxy Resins<br />Specialty Epoxy Resins</p>
-
+                                        <h4>Precision Hauling for All Payloads</h4>
+                                        <p style="text-align:justify;">Expertise in moving delicate, heavy, and oversized cargo with strict adherence to safety and planning.</p>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- 02 -->
+                    <div class="col col-md-6">
+                        <div class="projects-grids clearfix">
                             <div class="grid right-text">
                                 <div class="details">
                                     <div class="inner">
                                         <div class="count">02</div>
-                                        <h4>EPOXY HARDENERS</h4>
-                                        <p>Polyamide Hardeners<br />Phenalkamine Hardeners</p>
-
+                                        <h4>Bulk Material Movement</h4>
+                                        <p style="text-align:justify;">Fleet of 6-wheel and 10-wheel dumpers for sand, gravel, aggregate and construction debris. On-site dumping and mining support available. :contentReference[oaicite:4]{index=4}</p>
                                     </div>
                                 </div>
-                                <div class="project-pic">
-                                    <img src="/static/assets/images/epoxy-hardner.png" alt>
-                                </div>
-                            </div>
-                            <div class="grid">
-                                <div class="project-pic">
-                                    <img src="/static/assets/images/special-epoxy.jpg" alt>
-                                </div>
-                                <div class="details">
-                                    <div class="inner">
-                                        <div class="count">03</div>
-                                        <h4>SPECIALTY EPOXY HARDENERS</h4>
-                                        <p>For Top and Floor Coat<br />
-                                            For Rapid Curing Epoxies<br />
-                                            For Food Grade Epoxies<br />
-                                            For Underwater Curable Epoxies<br />
-                                            For Water Based Epoxies</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="grid right-text">
-                                <div class="project-pic">
-                                    <img src="/static/assets/images/solvents.png" alt>
-                                </div>
-                                <div class="details">
-                                    <div class="inner">
-                                        <div class="count">04</div>
-                                        <h4>SOLVENTS</h4>
-                                        <p>We deliver a wide range of Solvents including:
-
-                                            <br />Alcohols
-                                            <br />monomers
-                                            <br />hydrocarbons
-                                            <br />glycol esters
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="grid">
-                                <div class="project-pic">
-                                    <img src="/static/assets/images/others.png" alt>
-                                </div>
-                                <div class="details">
-                                    <div class="inner">
-                                        <div class="count">05</div>
-                                        <h4>Others</h4>
-                                        <p>Organic Pigments<br />
-                                            Inorganic Pigments<br />
-                                            Speciality Aluminium Pigments<br />
-                                            Dispersing Agents<br />
-                                        </p>
-                                    </div>
-                                </div>
-
+                                <!-- <div class="project-pic"><img src="/static/assets/images/dumper.jpg" alt="Dumpers"></div> -->
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col col-xs-12">
-                        <div class="view-all">
-                            <a href="/catalog">View All Products <i class="fi flaticon-slim-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- end container -->
-        </section>
 
-        <section id="energy" class="feature-projects section-padding">
-            <div class="container">
-                <div class="row">
-                    <div class="col col-lg-9">
-                        <div class="section-title-s2">
-                            <span></span>
-                            <h2>Energy</h2>
-                        </div>
-                        <div class="about-features clearfix">
-                            <h2>A Comprehensive Portfolio of Multi-Energy Solutions</h2>
-                            <p style="text-align: justify;">
-                                The global energy industry is transforming, and Trinas is at the forefront of this
-                                evolution. With energy security and energy transition as key priorities, we are fully
-                                committed to supporting our customers and supply partners in this critical sector. To
-                                meet these demands, we are broadening our focus to deliver sustainable products,
-                                innovative services, and renewable energy solutions. We provide comprehensive services
-                                and solutions for projects across the oil and gas production, refinery, petrochemical,
-                                and renewable energy sectors.
-                            </p>
-                            <p style="text-align: justify;">
-                                Backed by decades of industry expertise, a dedicated team, outstanding technical
-                                support, value-added services, efficient logistics, and a diverse product portfolio,
-                                Trinas is your trusted partner for all energy industry needs. Our solutions are designed
-                                to enhance processes, improve efficiency in delivering essential energy sources, and
-                                contribute to reducing carbon emissions. Trinas is dedicated to being the safest
-                                chemical distributor worldwide, prioritizing the health and safety of our employees,
-                                product safety, and environmental protection.
-                            </p>
-                        </div>
-                        <div class="about-features clearfix">
-                            <h2> We Serve All Energy Sectors</h2>
-                            <p style="text-align: justify;">
-                                We recognize the complexities of the energy industry's supply chains, distribution
-                                networks, and regulatory environment. Our expertise helps you overcome these challenges
-                                by offering customized solutions tailored to your business needs.
-
-
-                            </p>
-                            <p>By simplifying and optimizing operations, our experts deliver innovative strategies that
-                                reduce costs, mitigate risks, and improve productivity, all without compromising safety.
-                            </p>
-                        </div>
-                        <div class="about-features clearfix">
-                            <h2> Our Solutions Include</h2>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col col-xs-12">
+                    <!-- 03 -->
+                    <div class="col col-md-6">
                         <div class="projects-grids clearfix">
                             <div class="grid">
-                                <div class="project-pic">
-                                    <img src="/static/assets/images/productionChemicals.png" alt>
-                                </div>
-                                <div class="details">
-                                    <div class="inner">
-                                        <div class="count">01</div>
-                                        <h4>Production Chemicals</h4>
-
-                                        <p style="text-align: justify;">We provide specialized production chemicals for
-                                            the oil and gas industry—such as inhibitors, solvents, dispersants,
-                                            demulsifiers, scavengers, foaming agents, desiccants, and biocides—that help
-                                            reduce costs, enhance efficiency, and improve raw material quality.
-                                        </p>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="grid right-text">
-                                <div class="details">
-                                    <div class="inner">
-                                        <div class="count">02</div>
-                                        <h4>Oil & gas exploration( Drilling, Cementing, and Stimulation)</h4>
-                                        <p style="text-align: justify;">We supply high-quality drilling and cementing
-                                            chemicals—such as viscosifiers, fluid loss agents, corrosion inhibitors,
-                                            surfactants, and dispersants—backed by expert guidance to ensure the right
-                                            solution for every operation.</p>
-
-                                    </div>
-                                </div>
-                                <div class="project-pic">
-                                    <img src="/static/assets/images/oilandgas.png" alt>
-                                </div>
-                            </div>
-                            <div class="grid">
-                                <div class="project-pic">
-                                    <img src="/static/assets/images/refineries.png" alt>
-                                </div>
+                                <div class="project-pic"><img src="/static/assets/images/Equipments.jpg" alt="Equipment Rental"></div>
                                 <div class="details">
                                     <div class="inner">
                                         <div class="count">03</div>
-                                        <h4>Refineries and Chemical Plants</h4>
-                                        <p style="text-align: justify;">With extensive experience and proven chemical
-                                            solutions, Trinas supports refineries and petrochemical plants in the
-                                            challenging process of converting hydrocarbons into finished products.
-                                        </p>
+                                        <h4>Equipment Rental & Support</h4>
+                                        <p>BULLDOZERS, EXCAVATORS, WHEEL LOADERS, BACKHOES — certified operators and flexible hourly/daily/monthly rental plans for roadwork, excavation, leveling and more. :contentReference[oaicite:5]{index=5}</p>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- 04 -->
+                    <div class="col col-md-6">
+                        <div class="projects-grids clearfix">
                             <div class="grid right-text">
+                                <div class="project-pic"><img src="/static/assets/images/Equipments.jpg" alt="Tankers"></div>
                                 <div class="details">
                                     <div class="inner">
                                         <div class="count">04</div>
-                                        <h4>Gathering and Transmission Pipelines</h4>
-                                        <p style="text-align: justify;">Our chemical solutions keep transmission
-                                            pipelines and compression systems running smoothly by reducing heat,
-                                            preventing fouling, and lowering maintenance needs to ensure reliable
-                                            performance.
-                                        </p>
+                                        <h4>Safe & Specialized Liquid Transport</h4>
+                                        <p>Freshwater, fuel, diesel and non-hazardous chemical tankers with strict hygiene and safety protocols. Capacities from 10,000 to 36,000 liters. :contentReference[oaicite:6]{index=6}</p>
                                     </div>
-                                </div>
-                                <div class="project-pic">
-                                    <img src="/static/assets/images/piplines.png" alt>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
+                </div> <!-- end row -->
             </div>
         </section>
 
-        <section id="plasticAndRubberAdditives" class="feature-projects section-padding">
+        <!-- Oversized loads section -->
+        <section id="oversized" class="feature-projects section-padding">
             <div class="container">
-
                 <div class="row">
                     <div class="col col-lg-9">
                         <div class="section-title-s2">
                             <span></span>
-                            <h2>Plastic And Rubber Additives</h2>
-                        </div>
-                        <div class="about-features clearfix">
-                            <h2>Enhancing Performance and Functionality</h2>
-                            <p style="text-align: justify;">
-                                Plastic and rubber additives are essential for creating the diverse range of products we
-                                use daily. From packaging and automotive components to countless other applications,
-                                these additives enhance material properties and enable advanced functionalities. Trinas
-                                serves as a comprehensive partner, providing a wide selection of additives, formulation
-                                expertise, and efficient distribution to accelerate product development and market
-                                entry.
-                            </p>
-                            <p style="text-align: justify;">
-                                Whether you're developing a new product or refining an existing formulation with
-                                next-generation materials, Trinas offers more than just chemical distribution. We
-                                provide supply chain solutions and consultative support to help you overcome technical
-                                hurdles and access the necessary raw materials and cutting-edge ingredient technologies.
-                                Our team of experts collaborates with you to achieve optimal performance and meet
-                                specific application requirements.
-                            </p>
-                        </div>
-                        <div class="about-features clearfix">
-                            <h2>Your Trusted partner</h2>
-                            <p style="text-align: justify;">
-                                We offer a wide portfolio of performance additives for plastics and rubbers, engineered
-                                to help you achieve the right functionality and enhance material performance.
-                            </p>
-                            <p style="text-align: justify;">Our robust infrastructure and scalable supply chain support
-                                customers of all sizes, ensuring reliable access to the materials you need. We provide
-                                guidance from material selection and formulation through supply chain management and
-                                distribution, streamlining the process and accelerating time to market.
-                            </p>
-                        </div>
-                        <div class="about-features clearfix">
-                            <h2>Our product portfolio</h2>
-                            <p style="text-align: justify;">
-                                We focus on delivering solutions that enhance material properties and meet the evolving
-                                needs of various industries. Explore our comprehensive range of additives and specialty
-                                products for plastic and rubber applications, sourced from a global network of
-                                suppliers.
-                            </p>
+                            <h2>Oversized Load? We've Got It Covered</h2>
                         </div>
 
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col col-xs-12">
-                        <div class="view-all">
-                            <a href="/catalog">View Our Product Portfolio <i class="fi flaticon-slim-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                        <div class="about-features clearfix">
+                            <p style="text-align:justify;">
+                                Whether you're moving cranes, generators, rollers, or oversized equipment, Blue Falcon delivers safe
+                                and reliable heavy-load transportation with precision. Key capabilities: expert handling, escort vehicle
+                                coordination, strategic route planning, and permit handling & safety assurance. :contentReference[oaicite:7]{index=7}
+                            </p>
 
-        <section id="waterTreatments" class="feature-projects section-padding">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col col-lg-9">
-                        <div class="section-title-s2">
-                            <span></span>
-                            <h2>Water Treatments</h2>
-                        </div>
-                        <div class="about-features clearfix">
-                            <h2>Comprehensive Solutions</h2>
-                            <p style="text-align: justify;">
-                                When it comes to water treatment, every challenge is unique. Whether in municipal
-                                systems or
-                                industrial sectors such as food, pharma, power, and mining, Trinas identifies your needs
-                                and
-                                delivers tailored solutions through the right technologies and product selection.
-                            </p>
-                        </div>
-                        <div class="about-features clearfix">
-                            <h2>Your Trusted Partner</h2>
-                            <p style="text-align: justify;">
-                                Clean and safe water is fundamental not only for industry but also for the communities
-                                they serve.
-                                With our extensive product range and application expertise, we help enhance performance,
-                                improve
-                                operating efficiency, and ensure compliance across diverse industries and demanding
-                                environments.
-                            </p>
-                            <p style="text-align: justify;">
-                                Our experts work closely with you from assessment to implementation, offering reliable
-                                support
-                                and supply chain efficiency so you can achieve optimal water treatment outcomes with
-                                confidence.
-                            </p>
-                        </div>
-                        <div class="about-features clearfix">
-                            <h2>Product Highlights</h2>
-                            <p style="text-align: justify;">
-                                We provide a comprehensive portfolio of solutions designed to ensure water safety,
-                                reliability,
-                                and efficiency. Explore our range of treatment products tailored to diverse industrial
-                                and
-                                municipal applications:
-                            </p>
-                            <ul style="text-align: justify; margin-left:20px;">
-                                <li>Activated Carbon</li>
-                                <li>Biocides and Disinfectants</li>
-                                <li>Corrosion Inhibitors</li>
-                                <li>Flocculants</li>
-                                <li>Antiscalants</li>
-                                <li>Coagulants</li>
-                                <li>Defoamers</li>
-                                <li>Ion Exchange Resins</li>
-                                <li>Pemanganates</li>
+                            <ul style="margin-left:20px;">
+                                <li>Expert Handling of Oversized Loads</li>
+                                <li>Escort Vehicle Coordination</li>
+                                <li>Strategic Route Planning</li>
+                                <li>Permit Handling & Safety Assurance</li>
                             </ul>
                         </div>
+
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col col-xs-12">
-                        <div class="view-all">
-                            <a href="/catalog">View Our Product Portfolio <i class="fi flaticon-slim-right"></i></a>
+                    <div class="col col-lg-3">
+                        <div class="img-holder">
+                            <img src="/static/assets/images/oversized loads.jpg" alt="Oversized Loads">
+                            <img src="/static/assets/images/Oversized.jpg" alt="Oversized Loads">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Fleet -->
+        <section id="fleet" class="feature-projects section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-lg-9">
+                        <div class="section-title-s2">
+                            <span>Fleet & Equipment</span>
+                            <h2>Strength Where You Need It</h2>
+                        </div>
+
+                        <div class="about-features clearfix">
+                            <p style="text-align:justify;">
+                                Our modern fleet and certified operators ensure reliable delivery and site support. We maintain asset readiness
+                                to support construction, mining, and industrial work across the region. :contentReference[oaicite:8]{index=8}
+                            </p>
+                        </div>
+
+                        <div class="row">
+                            <div class="col col-md-4">
+                                <div class="info-card">
+                                    <h4>Bulldozers</h4>
+                                </div>
+                            </div>
+                            <div class="col col-md-4">
+                                <div class="info-card">
+                                    <h4>Excavators</h4>
+                                </div>
+                            </div>
+                            <div class="col col-md-4">
+                                <div class="info-card">
+                                    <h4>Wheel Loaders</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Logistics / Tailored solutions -->
+        <section id="logistics" class="feature-projects section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-lg-9">
+                        <div class="section-title-s2">
+                            <span>Solutions</span>
+                            <h2>Logistics Tailored to Your Needs</h2>
+                        </div>
+
+                        <div class="about-features clearfix">
+                            <p style="text-align:justify;">
+                                Flexible pricing models, custom scheduling, 24/7 support, and job tracking. Integrated logistics planning
+                                for construction firms: project-based, retainer, and spot hire options to keep your operations running on schedule. :contentReference[oaicite:9]{index=9}
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
         <section id="contact" class="contact-pg-section section-padding">
             <div class="container">
                 <div class="row">
                     <div class="col col-xs-12">
                         <div class="section-title-s2">
                             <span>Our contact info</span>
-                            <h2>Contact with us</h2>
+                            <h2>Contact Blue Falcon</h2>
                         </div>
                     </div>
                 </div>
@@ -604,92 +318,59 @@
                 <div class="row">
                     <div class="col col-lg-6">
                         <div class="contact-form">
-                            <form method="post" class="contact-validation-active" id="contact-form-s2">
-                                <div class="half-col">
-                                    <input type="text" name="name" id="name" class="form-control"
-                                        placeholder="Your Name">
-                                </div>
-                                <div class="half-col">
-                                    <input type="email" name="email" id="email" class="form-control"
-                                        placeholder="Your Email">
-                                </div>
-                                <div class="half-col">
-                                    <input type="text" name="phone" id="phone" class="form-control"
-                                        placeholder="Your Phone">
-                                </div>
-                                <div class="half-col">
-                                    <input type="text" name="address" id="address" class="form-control"
-                                        placeholder="Address">
-                                </div>
-                                <div>
-                                    <textarea class="form-control" name="note" id="note"
-                                        placeholder="Description..."></textarea>
-                                </div>
+                            <form method="post" id="contact-form-s2">
+                                <div class="half-col"><input type="text" name="name" class="form-control" placeholder="Your Name"></div>
+                                <div class="half-col"><input type="email" name="email" class="form-control" placeholder="Your Email"></div>
+                                <div class="half-col"><input type="text" name="phone" class="form-control" placeholder="Your Phone"></div>
+                                <div class="half-col"><input type="text" name="company" class="form-control" placeholder="Company / Project"></div>
+                                <div><textarea class="form-control" name="note" placeholder="Brief description of your requirement"></textarea></div>
                                 <div class="submit-btn-wrapper">
                                     <button type="submit" class="theme-btn-s3">Submit</button>
-                                    <div id="loader">
-                                        <i class="ti-reload"></i>
-                                    </div>
-                                </div>
-                                <div class="clearfix error-handling-messages">
-                                    <div id="success"></div>
-                                    <div id="error"></div>
                                 </div>
                             </form>
                         </div>
                     </div>
+
                     <div class="col col-lg-6">
                         <div class="info-box-outer">
                             <div class="info-box">
                                 <div class="grid">
-                                    <h3>Address</h3>
+                                    <h3>Headquarters</h3>
                                     <p>
                                         <strong>Jeddah - Headquarters</strong><br>
-                                        Green Falcon Trading Co. Ltd.<br>
-                                        Falcon International HQ, 7080 Az Zahraa<br>
-                                        Jeddah 23522 - Saudi Arabia
-                                    </p>
-                                    <p>
-                                        <strong>Riyadh</strong><br>
-                                        Green Falcon Trading Co. Ltd.<br>
-                                        Al Rossais Commercial Center, 607 - Al Olaya<br>
-                                        Riyadh 11213 - Saudi Arabia
+                                        Blue Falcon Transportation Co. Ltd.<br>
+                                        (Address placeholder)
                                     </p>
                                 </div>
 
                                 <div class="grid">
                                     <h3>Phone</h3>
-                                    <p>054 664 6623</p>
-
+                                    <p>+966 5X XXX XXXX</p>
                                 </div>
 
                                 <div class="grid">
                                     <h3>Email</h3>
-                                    <p>supplychain@greenfalcon.com.sa</p>
+                                    <p>info@bluefalcon.com</p>
                                 </div>
 
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div> <!-- end container -->
         </section>
 
         <footer class="site-footer">
-
             <div class="lower-footer">
                 <div class="container">
                     <div class="row">
                         <div class="separator"></div>
-                        <div class="col col-xs-12">
-                            <p class="copyright"><a target="_blank" href="#">Copyright © 2025 Green Falcon</a>
-                            </p>
-                            <ul>
+                        <div class="col col-xs-12 text-center">
+                            <p class="copyright"><a target="_blank" href="#">Copyright © 2025 Blue Falcon Transportation</a></p>
+                            <ul class="list-inline">
                                 <li><a href="#home">Home</a></li>
-                                <li><a href="#products">Products</a></li>
-                                <li><a href="#about">About Us</a></li>
-                                <li><a href="/catalog">Catalog</a></li>
+                                <li><a href="#services">Services</a></li>
+                                <li><a href="#about">About</a></li>
                                 <li><a href="#contact">Contact</a></li>
                             </ul>
                         </div>
@@ -700,6 +381,7 @@
 
     </div>
 
+    <!-- scripts (copied style from your provided homepage) -->
     <script>
         (function () {
             const navbar = document.querySelector('#navbar');
@@ -719,70 +401,40 @@
             function openNav() {
                 if (navbar) navbar.classList.add('in');
                 body.classList.add('nav-open');
-                // lock scrolling (some themes use body overflow hidden)
                 body.style.overflow = 'hidden';
             }
 
-            // Open / Close buttons (safe, non-conflicting)
             if (openBtn) openBtn.addEventListener('click', function (e) { e.stopPropagation(); openNav(); });
             if (closeBtn) closeBtn.addEventListener('click', function (e) { e.stopPropagation(); closeNav(); });
 
-            // Centralized click handler (capture phase) for nav links only
             document.addEventListener('click', function (e) {
-                // find nearest <a> inside #navbar (if any)
                 const anchor = e.target.closest && e.target.closest('#navbar a');
-                if (!anchor) return; // not a navbar link -> ignore
-
+                if (!anchor) return;
                 const hrefAttr = anchor.getAttribute('href') || '';
                 const absoluteHref = anchor.href || '';
-
-                // If user intends to open in new tab, let the browser do it but still close nav
-                if (anchor.target && anchor.target !== '') {
-                    closeNav();
-                    return;
-                }
-
-                // ---- In-page anchors (e.g. href="#contact") ----
+                if (anchor.target && anchor.target !== '') { closeNav(); return; }
                 if (hrefAttr.startsWith('#')) {
                     const targetEl = document.querySelector(hrefAttr);
-                    e.preventDefault();
-                    e.stopImmediatePropagation(); // prevent other handlers from interfering
+                    e.preventDefault(); e.stopImmediatePropagation();
                     closeNav();
-                    // small delay to let the nav close animation finish, then smooth-scroll
                     setTimeout(() => {
                         if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
                         else window.scrollTo({ top: 0, behavior: 'smooth' });
                     }, 90);
                     return;
                 }
-
-                // ---- External absolute link on different origin ----
                 const isExternal = /^https?:\/\//i.test(absoluteHref) && !absoluteHref.startsWith(location.origin);
-                if (isExternal) {
-                    // close nav and let default navigation happen
-                    closeNav();
-                    return;
-                }
-
-                // ---- Internal route / page (e.g. /catalog or catalog.html) ----
-                // Force navigation reliably even if other scripts call preventDefault
-                e.preventDefault();
-                e.stopImmediatePropagation();
+                if (isExternal) { closeNav(); return; }
+                e.preventDefault(); e.stopImmediatePropagation();
                 closeNav();
-                setTimeout(() => {
-                    // use anchor.href (absolute) to avoid relative path quirks
-                    window.location.href = absoluteHref;
-                }, 120); // small delay so close animation is visible
-            }, true); // <<< capture: true ensures this handler runs before bubble handlers
+                setTimeout(() => { window.location.href = absoluteHref; }, 120);
+            }, true);
         })();
     </script>
-
-
 
     <script src="/static/assets/js/jquery.min.js"></script>
     <script src="/static/assets/js/bootstrap.min.js"></script>
     <script src="/static/assets/js/jquery-plugin-collection.js"></script>
     <script src="/static/assets/js/script.js"></script>
 </body>
-
 </html>
