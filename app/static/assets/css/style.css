@@ -8643,3 +8643,108 @@ strong {
 }
 
 /*# sourceMappingURL=style.css.map */
+/* ====== Footer Section Styles ====== */
+/* Footer base */
+.site-footer {
+  background: #0f1724; /* dark navy — change as needed */
+  color: #e6eef8;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* inner spacing */
+.lower-footer {
+  padding: 28px 16px; /* vertical padding */
+}
+
+/* container width control (if you have a global container, remove this) */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* row inner alignment */
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* separator line */
+.footer-separator {
+  width: 100%;
+  max-width: 800px;
+  border: 0;
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+  margin: 0;
+}
+
+/* center block that holds copyright and nav side-by-side */
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap; /* wrap on small screens */
+  text-align: center;
+}
+
+/* copyright */
+.footer-content .copyright {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* style for the copyright link */
+.copyright-link {
+  color: inherit;
+  text-decoration: none;
+}
+.copyright-link:hover,
+.copyright-link:focus {
+  text-decoration: underline;
+}
+
+/* footer navigation */
+.footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 18px; /* spacing between links */
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* links appearance */
+.footer-list a {
+  color: #cfe7ff;
+  text-decoration: none;
+  font-weight: 400;
+  padding: 6px 4px;
+  transition: color .15s ease, transform .08s ease;
+  display: inline-block;
+}
+.footer-list a:hover,
+.footer-list a:focus {
+  color: #ffffff;
+  transform: translateY(-1px);
+  text-decoration: none;
+  outline: none;
+}
+
+/* small-screen adjustments */
+@media (max-width: 520px) {
+  .footer-content {
+    gap: 12px;
+    padding: 8px 0;
+  }
+
+  .footer-list {
+    gap: 12px;
+    justify-content: center;
+  }
+}
