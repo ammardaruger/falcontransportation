@@ -16,24 +16,14 @@ app.mount("/static", StaticFiles(directory="app/static"), name="static")
 templates = Jinja2Templates(directory="app/templates")
 
 # Home page
+
 @app.get("/")
 def home(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
 
-# PDF content page
-@app.get("/catalog")
-def pdf_content(request: Request):
-    return templates.TemplateResponse("pdfContent.html", {"request": request})
-
-# Serve catalog.json
-@app.get("/catalog.json")
-def get_catalog():
-    return FileResponse("app/static/catalog.json")
-
-# Serve catalog.pdf
-@app.get("/catalog.pdf")
-def get_pdf():
-    return FileResponse("app/static/catalog.pdf")
+@app.get("/old")
+def home(request: Request):
+    return templates.TemplateResponse("homeold.html", {"request": request})
 
 @app.post("/contact")
 async def contact(form: ContactForm):
