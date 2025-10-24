@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="irstheme">
+
+
+    <title> Blue Falcon </title>
+
+    <link rel="icon" type="image/png" href="/static/assets/images/bluetitle.png">
+    <link href="/static/assets/css/themify-icons.css" rel="stylesheet">
+    <link href="/static/assets/css/flaticon.css" rel="stylesheet">
+    <link href="/static/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/assets/css/animate.css" rel="stylesheet">
+    <link href="/static/assets/css/owl.carousel.css" rel="stylesheet">
+    <link href="/static/assets/css/owl.theme.css" rel="stylesheet">
+    <link href="/static/assets/css/slick.css" rel="stylesheet">
+    <link href="/static/assets/css/slick-theme.css" rel="stylesheet">
+    <link href="/static/assets/css/owl.transitions.css" rel="stylesheet">
+    <link href="/static/assets/css/jquery.fancybox.css" rel="stylesheet">
+    <link href="/static/assets/css/odometer-theme-default.css" rel="stylesheet">
+    <link href="/static/assets/css/style.css" rel="stylesheet">
+
+
+</head>
+<style>
+    /* Default desktop layout (unchanged) */
+    .grid {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 60px;
+    }
+
+    .grid.right-text {
+        flex-direction: row-reverse;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+
+        .grid,
+        .grid.right-text {
+            flex-direction: column !important;
+            text-align: center !important;
+        }
+
+        .grid .project-pic,
+        .grid.right-text .project-pic {
+            order: 0 !important;
+            /* always on top */
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .grid .details,
+        .grid.right-text .details {
+            order: 1 !important;
+            /* text always below */
+            text-align: center !important;
+        }
+
+        .grid .details .inner p {
+            text-align: center !important;
+        }
+    }
+
+
+    /* Base reusable blur section */
+    .bg-diagonal-blur {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: #111;
+        overflow: hidden;
+        padding: 100px 0;
+        border-radius: 12px;
+    }
+
+    /* Blurred diagonal gradient overlay */
+    .bg-diagonal-blur::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top right,
+                rgba(255, 255, 255, 0.9) 5%,
+                rgba(255, 255, 255, 0.1) 60%);
+        filter: blur(40px);
+        transform: scale(1.05);
+        z-index: 1;
+    }
+
+    .bg-diagonal-blur .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    /* ✅ Add image variants here */
+    .bg1 {
+        background-image: url("/static/assets/images/side.jpg");
+    }
+
+    .bg2 {
+        background-image: url("/static/assets/images/lowbed.jpg");
+    }
+
+    .bg3 {
+        background-image: url("/static/assets/images/tanker.jpg");
+    }
+
+    .bg4 {
+        background-image: url("/static/assets/images/construction-site.jpg");
+    }
+
+
+
+    @media (max-width: 767px) {
+        .navbar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .navbar-header .navbar-brand img {
+            max-width: 140px;
+
+            height: auto;
+        }
+
+        .navbar-header .open-btn {
+            margin-left: auto;
+
+        }
+    }
+</style>
+
+<body>
+
+    <div class="page-wrapper">
+
+        <header id="header" class="site-header header-style-1">
+
+            <nav class="navigation navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/"><img src="/static/assets/images/bluefalcon.png" alt></a>
+                        <button type="button" class="open-btn" style="
+                        top: 20%;
+                            background: transparent;
+                            border: none;
+                            outline: none;
+                            color: #45a4db;  /* blue color */
+                            font-size: 28px;  /* size of the ☰ */
+                            padding: 8px;
+                            cursor: pointer;
+                        ">☰</button>
+
+                    </div>
+
+                    <div id="navbar" class="navbar-collapse collapse navbar-right navigation-holder">
+                        <button class="close-navbar"><i class="ti-close"></i></button>
+                        <ul class="nav navbar-nav">
+                            <li class="menu-item-has-children"><a href="#home">Home</a></li>
+                            <li class="menu-item-has-children"><a href="#about">About Us</a></li>
+                            <li class="menu-item-has-children"><a href="#services">Services</a></li>
+                            <li class="menu-item-has-children"><a href="#oversized">Oversized Loads</a></li>
+                            <li class="menu-item-has-children"><a href="#contracts">Contracts</a></li>
+                            <li class="menu-item-has-children"><a href="/download">Catalog</a></li>
+                            <li class="menu-item-has-children"><a href="#contact">Contact</a></li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+
+        <section id="home" class="hero hero-slider-wrapper hero-style-1">
+            <div class="hero-slider">
+                <div class="slide">
+                    <img src="/static/assets/images/slider/slide-1.jpg" alt class="slider-bg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 slide-caption">
+                                <div class="slide-subtitle">
+                                    <p>Welcome to Blue Falcon</p>
+                                </div>
+                                <div class="slide-title">
+                                    <h2>Reliable. Robust. Ready for Every Load</h2>
+                                </div>
+                                <div class="btns">
+                                    <a href="#about" class="theme-btn">More About Us</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <img src="/static/assets/images/slider/slide-2.jpg" alt class="slider-bg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 slide-caption">
+                                <div class="slide-subtitle">
+                                    <p>Welcome to Blue Falcon</p>
+                                </div>
+                                <div class="slide-title">
+                                    <h2>From Groundwork to Greatness — We Move It All.</h2>
+                                </div>
+                                <div class="btns">
+                                    <a href="#about" class="theme-btn">More About Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <img src="/static/assets/images/slider/slider-4.jpg" alt class="slider-bg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 slide-caption">
+                                <div class="slide-subtitle">
+                                    <p>Welcome to Blue Falcon</p>
+                                </div>
+                                <div class="slide-title">
+                                    <h2>Driving Reliability. Delivering Results.</h2>
+                                </div>
+                                <div class="btns">
+                                    <a href="#about" class="theme-btn">More About Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="feature-projects section-padding bg-diagonal-blur bg1">
+            <div style="background-color: white; padding: 50px; border-radius: 8px;" class="container">
+                <div class="row">
+                    <div class="col col-lg-9">
+                        <div class="section-title-s2">
+                            <span>Welcome to</span>
+                            <h2>Blue falcon</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-lg-12 col-md-12">
+                        <div class="about-features clearfix">
+                            <p style="text-align: justify;">Blue Falcon Transportation Company is a dynamic logistics
+                                and heavy transport services provider,
+                                committed to excellence in moving, hauling, and supporting the region's most critical
+                                infrastructure
+                                and industrial projects. With a modern fleet, skilled workforce, and a strong safety
+                                culture, we serve
+                                the construction, oil & gas, and industrial sectors with unwavering reliability.</p>
+                        </div>
+                        <div class="about-features clearfix">
+                            <h2>What we specialize in</h2>
+                            <p style="text-align: justify;">We specialize in flatbed logistics, dumper truck operations,
+                                heavy equipment rental, tanker transport, and tailored logistics solutions across Saudi
+                                Arabia and the GCC.
+                                Our success is built on customer trust, operational efficiency, and our dedication to
+                                quality service delivery.
+                                Whether transporting oversized cargo, bulk materials, or supporting your site with
+                                specialized machinery, Blue Falcon stands as your dependable logistics partner
+                            </p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="feature-projects section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-lg-9">
+                        <div class="section-title-s2">
+                            <span>Our</span>
+                            <h2>Services</h2>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col col-xs-12">
+                        <div class="projects-grids clearfix">
+                            <div class="grid">
+                                <div class="project-pic">
+                                    <img src="/static/assets/images/card1.jpg" alt>
+                                </div>
+                                <div class="details">
+                                    <div class="inner">
+                                        <div class="count">01</div>
+                                        <h4>FLATBED LOGISTICS SERVICES</h4>
+                                        <h5>Ideal Cargo Types We Transport</h5>
+                                        <p style="text-align:left;">We ensure safe, on-time delivery for all loads. Our
+                                            flatbed fleet securely moves containers, steel, and prefab units across any
+                                            distance.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid right-text">
+                                <div class="details">
+                                    <div class="inner">
+                                        <div class="count">02</div>
+                                        <h4>DUMPER TRUCK SOLUTION</h4>
+                                        <h5>Bulk Material Movement Made Easy</h5>
+                                        <p style="text-align:right;">Fleet of 6- and 10-wheel dumpers for sand, gravel,
+                                            and debris — with on-site dumping, mining support, and cleanup.</p>
+                                    </div>
+                                </div>
+                                <div class="project-pic">
+                                    <img src="/static/assets/images/card2.jpg" alt>
+                                </div>
+                            </div>
+
+                            <div class="grid">
+                                <div class="project-pic">
+                                    <img src="/static/assets/images/card3.jpg" alt>
+                                </div>
+                                <div class="details">
+                                    <div class="inner">
+                                        <div class="count">03</div>
+                                        <h4>HEAVY EQUIPMENT RENTALS</h4>
+                                        <h5>Strength Where You Need It</h5>
+                                        <p style="text-align: left;">Bulldozers, Excavators, Wheel Loaders and Backhoes.
+                                            Certified operators and Hourly/Daily/Monthly rental plans. Equipment support
+                                            for roadwork, excavation, leveling & more.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid right-text">
+                                <div class="details">
+                                    <div class="inner">
+                                        <div class="count">04</div>
+                                        <h4>TANKER TRANSPORT DIVISION</h4>
+                                        <h5>Safe & Specialized Liquid Transport</h5>
+                                        <p style="text-align:right;">
+                                            Freshwater, fuel, diesel, and non-hazardous chemical tankers.
+                                            Capacity from 10,000 to 36,000 liters with strict hygiene
+                                            and safety protocols for every haul.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="project-pic">
+                                    <img src="/static/assets/images/card4.jpg" alt="Tanker Transport Division">
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- end container -->
+        </section>
+
+        <section id="oversized" class="feature-projects section-padding bg-diagonal-blur bg2">
+            <div style="background-color: white; padding: 50px; border-radius: 8px;" class="container">
+                <div class="row">
+                    <div class="col col-lg-9">
+                        <div class="section-title-s2">
+                            <span></span>
+                            <h2>Lowbed & Flatbed for Heavy Machinery</h2>
+                        </div>
+                        <div class="about-features clearfix">
+                            <h2>Oversized Load? We’ve Got It Covered</h2>
+                            <p style="text-align: justify;">
+                                Whether you’re moving cranes, generators, rollers, or oversized equipment,
+                                <strong>Blue Falcon</strong> ensures safe and precise heavy-load transportation
+                                with complete coordination and compliance.
+                            </p>
+                            <p style="text-align: justify;">
+                                Our lowbed and flatbed fleet is engineered for oversized hauls, offering
+                                expert handling, escort vehicle coordination, strategic route planning, and
+                                full permit management — all while adhering to the highest safety standards.
+                            </p>
+                        </div>
+
+                        <div class="about-features clearfix">
+                            <h2>Our Heavy Haul Capabilities</h2>
+                            <ul style="text-align: justify; list-style-type: disc; margin-left: 20px;">
+                                <li><strong>Expert Handling:</strong> Specialized lowbed and flatbed units for demanding
+                                    loads.</li>
+                                <li><strong>Escort Support:</strong> Fully managed escort vehicles for secure transit.
+                                </li>
+                                <li><strong>Route Optimization:</strong> Planned to fit load dimensions, regulations,
+                                    and terrain.</li>
+                                <li><strong>Permit & Safety:</strong> Complete documentation and compliance with safety
+                                    protocols.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contracts" class="feature-projects section-padding">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col col-lg-9">
+                        <div class="section-title-s2">
+                            <span></span>
+                            <h2>Client Solutions & Custom Contracts</h2>
+                        </div>
+
+                        <div class="about-features clearfix">
+                            <h2>Logistics Tailored to Your Needs</h2>
+                            <p style="text-align: justify;">
+                                At <strong>Blue Falcon Transportation</strong>, we believe every client deserves
+                                logistics
+                                solutions that align with their project goals. Our flexible contracts and integrated
+                                planning ensure your operations remain efficient, on time, and cost-effective.
+                            </p>
+                        </div>
+
+                        <div class="about-features clearfix">
+                            <h2>Flexible Pricing Models</h2>
+                            <p style="text-align: justify;">
+                                Choose from project-based, retainer, or spot hire options — designed to fit the
+                                dynamic needs of construction, oil & gas, and industrial clients.
+                            </p>
+                        </div>
+
+                        <div class="about-features clearfix">
+                            <h2>Integrated Logistics for Construction Firms</h2>
+                            <p style="text-align: justify;">
+                                We provide cohesive, end-to-end logistics planning to streamline
+                                workflows and ensure materials, machinery, and manpower align seamlessly across your
+                                projects.
+                            </p>
+                        </div>
+
+                        <div class="about-features clearfix">
+                            <h2>Custom Scheduling & 24/7 Support</h2>
+                            <p style="text-align: justify;">
+                                From continuous job tracking to around-the-clock assistance, our operations team ensures
+                                that your transport activities run smoothly and stay on schedule.
+                            </p>
+                        </div>
+
+                        <div class="about-features clearfix">
+                            <blockquote style="font-style: italic; font-size: 28px; color: #000;">
+                                “Your success drives our strategy and solutions.”
+                            </blockquote>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="contact-pg-section section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-xs-12">
+                        <div class="section-title-s2">
+                            <span>Our contact info</span>
+                            <h2>Contact us</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col col-lg-6">
+                        <div class="contact-form">
+                            <form method="post" class="contact-validation-active" id="contact-form-s2">
+                                <div class="half-col">
+                                    <input type="text" name="name" id="name" class="form-control"
+                                        placeholder="Your Name">
+                                </div>
+                                <div class="half-col">
+                                    <input type="email" name="email" id="email" class="form-control"
+                                        placeholder="Your Email">
+                                </div>
+                                <div class="half-col">
+                                    <input type="text" name="phone" id="phone" class="form-control"
+                                        placeholder="Your Phone">
+                                </div>
+                                <div class="half-col">
+                                    <input type="text" name="address" id="address" class="form-control"
+                                        placeholder="Address">
+                                </div>
+                                <div>
+                                    <textarea class="form-control" name="note" id="note"
+                                        placeholder="Description..."></textarea>
+                                </div>
+                                <div class="submit-btn-wrapper">
+                                    <button type="submit" class="theme-btn-s3">Submit</button>
+                                    <div id="loader">
+                                        <i class="ti-reload"></i>
+                                    </div>
+                                </div>
+                                <div class="clearfix error-handling-messages">
+                                    <div id="success"></div>
+                                    <div id="error"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col col-lg-6">
+                        <div class="info-box-outer">
+                            <div class="info-box">
+                                <div style="padding: 20px;">
+                                    <h3>Headquarters</h3>
+                                    <p>
+                                        <strong>Jeddah - Headquarters</strong><br>
+                                        Blue Falcon Transportation Co. Ltd.<br>
+                                        Az Zahraa, Jeddah 23522, Saudia Arabia.
+                                    </p>
+                                </div>
+
+                                <div style="padding: 20px;">
+                                    <h3>Phone</h3>
+                                    <p>+966 55 900 8898</p>
+
+                                </div>
+
+                                <div style="padding: 20px;">
+                                    <h3>Email</h3>
+                                    <p>info@bluefalcon.com</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- end container -->
+        </section>
+
+        <footer class="site-footer">
+
+            <div class="lower-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="separator"></div>
+                        <div class="col col-xs-12">
+                            <p class="copyright"><a target="_blank" href="#">Copyright © 2025 Blue Falcon</a>
+                            </p>
+                            <ul>
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#services">Services</a></li>
+                                <li><a href="#about">About Us</a></li>
+                                <li><a href="#contracts">Contracts</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        (function () {
+            const navbar = document.querySelector('#navbar');
+            const body = document.body;
+            const openBtn = document.querySelector('.open-btn');
+            const closeBtn = document.querySelector('.close-navbar');
+
+            function closeNav() {
+                if (navbar) {
+                    navbar.classList.remove('in');
+                    navbar.classList.remove('open');
+                }
+                body.classList.remove('nav-open', 'no-scroll');
+                if (body.style.overflow === 'hidden') body.style.overflow = '';
+            }
+
+            function openNav() {
+                if (navbar) navbar.classList.add('in');
+                body.classList.add('nav-open');
+                // lock scrolling (some themes use body overflow hidden)
+                body.style.overflow = 'hidden';
+            }
+
+            // Open / Close buttons (safe, non-conflicting)
+            if (openBtn) openBtn.addEventListener('click', function (e) { e.stopPropagation(); openNav(); });
+            if (closeBtn) closeBtn.addEventListener('click', function (e) { e.stopPropagation(); closeNav(); });
+
+            // Centralized click handler (capture phase) for nav links only
+            document.addEventListener('click', function (e) {
+                // find nearest <a> inside #navbar (if any)
+                const anchor = e.target.closest && e.target.closest('#navbar a');
+                if (!anchor) return; // not a navbar link -> ignore
+
+                const hrefAttr = anchor.getAttribute('href') || '';
+                const absoluteHref = anchor.href || '';
+
+                // If user intends to open in new tab, let the browser do it but still close nav
+                if (anchor.target && anchor.target !== '') {
+                    closeNav();
+                    return;
+                }
+
+                // ---- In-page anchors (e.g. href="#contact") ----
+                if (hrefAttr.startsWith('#')) {
+                    const targetEl = document.querySelector(hrefAttr);
+                    e.preventDefault();
+                    e.stopImmediatePropagation(); // prevent other handlers from interfering
+                    closeNav();
+                    // small delay to let the nav close animation finish, then smooth-scroll
+                    setTimeout(() => {
+                        if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
+                        else window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }, 90);
+                    return;
+                }
+
+                // ---- External absolute link on different origin ----
+                const isExternal = /^https?:\/\//i.test(absoluteHref) && !absoluteHref.startsWith(location.origin);
+                if (isExternal) {
+                    // close nav and let default navigation happen
+                    closeNav();
+                    return;
+                }
+
+                // ---- Internal route / page (e.g. /catalog or catalog.html) ----
+                // Force navigation reliably even if other scripts call preventDefault
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                closeNav();
+                setTimeout(() => {
+                    // use anchor.href (absolute) to avoid relative path quirks
+                    window.location.href = absoluteHref;
+                }, 120); // small delay so close animation is visible
+            }, true); // <<< capture: true ensures this handler runs before bubble handlers
+        })();
+    
+    </script>
+    
+    <script src="/static/assets/js/jquery.min.js"></script>
+    <script src="/static/assets/js/bootstrap.min.js"></script>
+    <script src="/static/assets/js/jquery-plugin-collection.js"></script>
+    <script src="/static/assets/js/script.js"></script>
+</body>
+
+</html>

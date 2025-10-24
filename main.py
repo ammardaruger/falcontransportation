@@ -17,13 +17,16 @@ templates = Jinja2Templates(directory="app/templates")
 
 # Home page
 
+
 @app.get("/")
 def home(request: Request):
-    return templates.TemplateResponse("home.html", {"request": request})
+    return templates.TemplateResponse("blue.html", {"request": request})
 
-@app.get("/old")
-def home(request: Request):
-    return templates.TemplateResponse("homeold.html", {"request": request})
+
+@app.get("/download")
+def get_pdf():
+    return FileResponse("app/static/Blue Falcon Transportation3.0.pdf")
+
 
 @app.post("/contact")
 async def contact(form: ContactForm):
