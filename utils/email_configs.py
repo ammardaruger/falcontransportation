@@ -3,12 +3,17 @@ import ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from dotenv import load_dotenv
-load_dotenv(".env",override=True)
 import os
+from dotenv import load_dotenv
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))       # .../falcontransportation/utils
+ENV_PATH = os.path.join(BASE_DIR, "..", ".env")               # up one level, to project root
+load_dotenv(ENV_PATH, override=True)
+
 SMTPEMAIL = os.getenv("EMAIL")
 SMTPPASSWORD = os.getenv("PASSWORD")
 SERVER = os.getenv("SERVER")
-PORT = int(os.getenv("PORT"))
+PORT = int(os.getenv("PORT", 465))
 async def send_contact_email(
     user_name: str,
     user_email: str,
