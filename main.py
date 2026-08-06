@@ -9,11 +9,13 @@ import os
 
 app = FastAPI()
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # Serve static files
-app.mount("/static", StaticFiles(directory="app/static"), name="static")
+app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "app/static")), name="static")
 
 # Templates
-templates = Jinja2Templates(directory="app/templates")
+templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "app/templates"))
 
 # Home page
 @app.get("/")
@@ -32,12 +34,12 @@ def pdf_content(request: Request):
 # Serve catalog.json
 @app.get("/catalog.json")
 def get_catalog():
-    return FileResponse("app/static/catalog.json")
+    return FileResponse(os.path.join(BASE_DIR, "app/static/catalog.json"))
 
 # Serve catalog.pdf
 @app.get("/catalog.pdf")
 def get_pdf():
-    return FileResponse("app/static/catalog.pdf")
+    return FileResponse(os.path.join(BASE_DIR, "app/static/catalog.pdf"))
 
 @app.post("/contact")
 async def contact(form: ContactForm):
@@ -49,11 +51,10 @@ async def contact(form: ContactForm):
     )
     return response
 
-
 if __name__ == "__main__":
     uvicorn.run(
-        "main:app",          # Replace "main" with the name of your Python file
-        host="0.0.0.0",    # The IP address to run the server on
-        port=8000,           # The port to run the server on
-        reload=True          # Reloads the server automatically when you change the code
+        "main:app",
+        host="0.0.0.0",
+        port=8000,
+        reload=True
     )
