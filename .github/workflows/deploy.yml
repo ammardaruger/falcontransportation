@@ -27,13 +27,16 @@ jobs:
             git fetch origin
             git reset --hard origin/main
 
-            rsync -a --delete \
+            rsync -a \
               --exclude='.git/' \
               --exclude='.github/' \
+              --exclude='.cpanel.yml' \
+              --exclude='tmp/' \
               /home/bluevwfb/repos/falcontransportation/ \
               /home/bluevwfb/falcontransportation/
-              
-            mkdir -p /home/bluevwfb/falcontransportation/tmp
-            touch /home/bluevwfb/falcontransportation/tmp/restart.txt
 
-            echo "Blue Falcon deployment complete"
+              mkdir -p /home/bluevwfb/falcontransportation/tmp
+              touch /home/bluevwfb/falcontransportation/tmp/restart.txt
+
+              echo "Blue Falcon deployment completed"
+           
