@@ -32,7 +32,8 @@ jobs:
               --exclude='.github/' \
               /home/bluevwfb/repos/falcontransportation/ \
               /home/bluevwfb/falcontransportation/
-
+              
+            mkdir -p /home/bluevwfb/falcontransportation/tmp
             touch /home/bluevwfb/falcontransportation/tmp/restart.txt
 
             echo "Blue Falcon deployment complete"
