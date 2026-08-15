@@ -1,0 +1,42 @@
+name: Deploy Blue Falcon
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to Namecheap
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.CPANEL_HOST }}
+          username: ${{ secrets.CPANEL_USER }}
+          key: ${{ secrets.CPANEL_SSH_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          port: 21098
+
+          script: |
+            set -e
+
+            cd /home/bluevwfb/repos/falcontransportation
+
+            git fetch origin
+            git reset --hard origin/main
+
+            rsync -a \
+              --exclude='.git/' \
+              --exclude='.github/' \
+              --exclude='.cpanel.yml' \
+              --exclude='tmp/' \
+              /home/bluevwfb/repos/falcontransportation/ \
+              /home/bluevwfb/falcontransportation/
+
+              mkdir -p /home/bluevwfb/falcontransportation/tmp
+              touch /home/bluevwfb/falcontransportation/tmp/restart.txt
+
+              echo "Blue Falcon deployment completed"
+           
