@@ -1,63 +1,85 @@
-from fastapi import FastAPI, Request
-from fastapi.responses import FileResponse
-from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
-import uvicorn
+from flask import Flask, render_template, send_file, request, jsonify
 from utils.email_configs import send_contact_email
-from models import ContactForm
+import asyncio
 import os
-
-app = FastAPI()
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# Serve static files
-app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "app/static")), name="static")
+app = Flask(
+    __name__,
+    template_folder=os.path.join(BASE_DIR, "app/templates"),
+    static_folder=os.path.join(BASE_DIR, "app/static"),
+    static_url_path="/static",
+)
 
-# Templates
-templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "app/templates"))
 
-# Home page
-@app.get("/")
-def home(request: Request):
-    return templates.TemplateResponse(
-        request=request,
-        name="home.html",
-        context={}
-    )
-@app.get("/old")
-def home(request: Request):
-    return templates.TemplateResponse("homeold.html", {"request": request})
+@app.route("/")
+def home():
+    return render_template("home.html")
 
-# PDF content page
-@app.get("/catalog")
-def pdf_content(request: Request):
-    return templates.TemplateResponse("pdfContent.html", {"request": request})
 
-# Serve catalog.json
-@app.get("/catalog.json")
+@app.route("/old")
+def old_home():
+    return render_template("homeold.html")
+
+
+@app.route("/catalog")
+def catalog():
+    return render_template("pdfContent.html")
+
+
+@app.route("/catalog.json")
 def get_catalog():
-    return FileResponse(os.path.join(BASE_DIR, "app/static/catalog.json"))
-
-# Serve catalog.pdf
-@app.get("/catalog.pdf")
-def get_pdf():
-    return FileResponse(os.path.join(BASE_DIR, "app/static/catalog.pdf"))
-
-@app.post("/contact")
-async def contact(form: ContactForm):
-    contact_details = form.dict()
-    response = await send_contact_email(
-        user_name=contact_details['name'],
-        user_email=contact_details['email'],
-        user_message=contact_details['note']
+    return send_file(
+        os.path.join(BASE_DIR, "app/static/catalog.json"),
+        mimetype="application/json"
     )
-    return response
+
+
+@app.route("/catalog.pdf")
+def get_pdf():
+    return send_file(
+        os.path.join(BASE_DIR, "app/static/catalog.pdf"),
+        mimetype="application/pdf"
+    )
+
+
+@app.route("/contact", methods=["POST"])
+def contact():
+    try:
+        data = request.get_json(silent=True)
+
+        if data:
+            name = data.get("name", "")
+            email = data.get("email", "")
+            note = data.get("note", "")
+        else:
+            name = request.form.get("name", "")
+            email = request.form.get("email", "")
+            note = request.form.get("note", "")
+
+        if not name or not email or not note:
+            return jsonify({
+                "success": False,
+                "message": "Please complete all required fields."
+            }), 400
+
+        result = asyncio.run(
+            send_contact_email(
+                user_name=name,
+                user_email=email,
+                user_message=note
+            )
+        )
+
+        return jsonify(result)
+
+    except Exception:
+        return jsonify({
+            "success": False,
+            "message": "An error occurred while sending your message."
+        }), 500
+
 
 if __name__ == "__main__":
-    uvicorn.run(
-        "main:app",
-        host="0.0.0.0",
-        port=8000,
-        reload=True
-    )
+    app.run(debug=True)
